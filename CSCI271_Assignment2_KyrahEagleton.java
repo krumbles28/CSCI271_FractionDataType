@@ -1,4 +1,16 @@
-
+/*************************************************************************
+* Project 2 for CSCI 271-001 Spring 2026
+*
+* Author: Kyrah Eagleton
+* OS: Ubuntu Debian Linux 21.1
+* Compiler: javac 25.0.1
+* Date: Feburary 2, 2026
+*
+* Purpose
+* This program calls a new data type called "Fraction"
+* this data type creates a fraction and preforms all 
+* operations that can be applied to a fraction.
+*************************************************************************/
 
 
 public class CSCI271_Assignment2_KyrahEagleton{
@@ -9,16 +21,33 @@ public class CSCI271_Assignment2_KyrahEagleton{
         Fraction c = new Fraction(6,7);
         Fraction results = c.multiply(a.divide(b));
         System.out.println(results);
-        Fraction test = new Fraction (0,8);
-        System.out.println(test);
+        Fraction test = new Fraction (1,3);
+        System.out.println(test.pow(-3));
 
     }
     public static class Fraction{
-        public long Num, Dem;
+        public long Num, Dem; // initianlizes the numerator and denominator
      
-
+        /*****************************<GCD>****************************
+        * Description: finds the greatest common denominator
+        *
+        * Parameters: long a and long b
+        *
+        * Pre: both a and b are longs
+        * 
+        * 
+        *
+        * Post: returns a long
+        * 
+        * 
+        *
+        * Returns: the greatest common denominator
+        *
+        * Called by: Fraction, add, and subtract
+        * Calls: none
+        ************************************************************************/
         private  long GCD (long a, long b){
-            long temp;
+            long temp; 
             while (b != 0){
                 temp = b;
                 b = a % b;
