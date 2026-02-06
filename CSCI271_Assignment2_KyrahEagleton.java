@@ -11,7 +11,23 @@
 * this data type creates a fraction and preforms all 
 * operations that can be applied to a fraction.
 *************************************************************************/
-
+/*******************************************************************
+* I declare and confirm the following:
+* - I have not discussed this program code with anyone other than my
+* instructor or the teaching assistants assigned to this course.
+* - I have not used programming code obtained from someone else,
+* or any unauthorised sources, including the Internet, either
+* modified or unmodified.
+* - If any source code or documentation used in my program was
+* obtained from other sources, like a text book or course notes,
+* I have clearly indicated that with a proper citation in the
+* comments of my program.
+* - I have not designed this program in such a way as to defeat or
+* interfere with the normal operation of the supplied grading code.
+*
+* Kyrah Eagleton
+* W30687981
+********************************************************************/
 
 public class CSCI271_Assignment2_KyrahEagleton{
       public static void main(String[] args) {
@@ -34,13 +50,9 @@ public class CSCI271_Assignment2_KyrahEagleton{
         * Parameters: long a and long b
         *
         * Pre: both a and b are longs
-        * 
-        * 
         *
         * Post: returns a long
         * 
-        * 
-        *
         * Returns: the greatest common denominator
         *
         * Called by: Fraction, add, and subtract
@@ -56,6 +68,21 @@ public class CSCI271_Assignment2_KyrahEagleton{
             }
             return a;
         }
+         /*****************************<Fraction>****************************
+        * Description: Creates the fraction in the fraction class
+        *
+        * Parameters: long num and long dem
+        *
+        * Pre: both num and dem are longs
+        *
+        * Post: a fration is returned with a Numerator and Denomenator both of which
+        * are simplified
+        * 
+        * Returns: returns a simplified fraction
+        *
+        * Called by: add, subtract, multiply, divide, pow, and negate
+        * Calls: GCD, getNum, and getDem
+        ************************************************************************/
         public Fraction (long num, long dem){
             this.Dem = dem;
             this.Num = num;
@@ -68,14 +95,58 @@ public class CSCI271_Assignment2_KyrahEagleton{
             }
             
         }
+         /*****************************<Fraction>****************************
+        * Description: Creates the fraction in the fraction class
+        *
+        * Parameters: long x
+        *
+        * Pre: x is a long
+        *
+        * Post: a fration is returned with a Numerator and Denomenator of 1
+        * 
+        * Returns: returns a simplified fraction
+        *
+        * Called by: N/A
+        * Calls: N/A
+        ************************************************************************/
         public Fraction (long x){
             this.Num = x;
             this.Dem = 1;
         }
-        public long getNum(){
+         /*****************************<getNum>****************************
+        * Description: returns the Numerator of a fraction
+        *
+        * Parameters: N/A
+        *
+        * Pre: Fraction has a numerator
+        *
+        * Post: Numerator is returned
+        * 
+        * Returns: returns a simplified fraction
+        *
+        * Called by: Fraction, toString, GCD, add, subtract, multiply, divide, 
+        * pow, and negate
+        * Calls:N/A
+        ************************************************************************/
+        private long getNum(){
             return Num;
         }
-        public long getDem(){
+        /*****************************<getDem>****************************
+        * Description: returns the Denomenator of a fraction
+        *
+        * Parameters: N/A
+        *
+        * Pre: Fraction has a denomenator
+        *
+        * Post: Denomenator is returned
+        * 
+        * Returns: returns a simplified fraction
+        *
+        * Called by: Fraction, toString, GCD, add, subtract, multiply, divide, 
+        * pow, and negate
+        * Calls:N/A
+        ************************************************************************/
+        private long getDem(){
             return Dem;
         }
 
@@ -96,7 +167,20 @@ public class CSCI271_Assignment2_KyrahEagleton{
             }
            return line;
         }
-        
+        /*****************************<add>****************************
+        * Description: returns the sum of 2 fractions
+        *
+        * Parameters: Fraction inf
+        *
+        * Pre: inf is a fraction
+        *
+        * Post: new fraction is returned
+        * 
+        * Returns: returns a simplified fraction
+        *
+        * Called by: N/A
+        * Calls:getNum, getDem, GCD, Fraction
+        ************************************************************************/
         public Fraction add(Fraction inf){
             long inNum = inf.getNum();
             long inDem = inf.getDem();
@@ -114,6 +198,20 @@ public class CSCI271_Assignment2_KyrahEagleton{
             return result;
             
         }
+        /*****************************<subtract>****************************
+        * Description: returns the difference of 2 fractions
+        *
+        * Parameters: Fraction inf
+        *
+        * Pre: inf is a fraction
+        *
+        * Post: new fraction is returned
+        * 
+        * Returns: returns a simplified fraction
+        *
+        * Called by: N/A
+        * Calls:getNum, getDem, GCD, Fraction
+        ************************************************************************/
         public Fraction subtract(Fraction inf){
              long inNum = inf.getNum();
             long inDem = inf.getDem();
@@ -130,6 +228,20 @@ public class CSCI271_Assignment2_KyrahEagleton{
             Fraction result = new Fraction (Num, Dem);
             return result;
         }
+        /*****************************<divide>****************************
+        * Description: returns the quotient of 2 fractions
+        *
+        * Parameters: Fraction inf
+        *
+        * Pre: inf is a fraction
+        *
+        * Post: new fraction is returned
+        * 
+        * Returns: returns a simplified fraction
+        *
+        * Called by: pow
+        * Calls:getNum, getDem, Fraction
+        ************************************************************************/
         public Fraction divide(Fraction inf){
             long inNum = inf.getNum();
             long inDem = inf.getDem();
@@ -141,6 +253,20 @@ public class CSCI271_Assignment2_KyrahEagleton{
             Fraction result = new Fraction (Num, Dem);
             return result;
         }
+        /*****************************<multiply>****************************
+        * Description: returns the product of 2 fractions
+        *
+        * Parameters: Fraction inf
+        *
+        * Pre: inf is a fraction
+        *
+        * Post: new fraction is returned
+        * 
+        * Returns: returns a simplified fraction
+        *
+        * Called by: N/A
+        * Calls:getNum, getDem, Fraction
+        ************************************************************************/
         public Fraction multiply(Fraction inf){
             long inNum = inf.getNum();
             long inDem = inf.getDem();
@@ -152,6 +278,21 @@ public class CSCI271_Assignment2_KyrahEagleton{
             Fraction result = new Fraction (Num, Dem);
             return result;
         }
+        /*****************************<pow>****************************
+        * Description: returns a new fraction from the original fraction 
+        * taken to the power n
+        *
+        * Parameters: int inf
+        *
+        * Pre: n is an integer
+        *
+        * Post: new fraction is returned
+        * 
+        * Returns: returns a simplified fraction
+        *
+        * Called by: N/A
+        * Calls:getNum, getDem, divide, Fraction
+        ************************************************************************/
         public Fraction pow(int n){
             if (n<0) {
                 Fraction temp = new Fraction(1);
@@ -168,6 +309,20 @@ public class CSCI271_Assignment2_KyrahEagleton{
             Fraction result = new Fraction (Num, Dem);
             return result;
         }
+        /*****************************<negate>****************************
+        * Description: returns the negations fraction
+        *
+        * Parameters: N/A
+        *
+        * Pre: N/A
+        *
+        * Post: new fraction is returned
+        * 
+        * Returns: returns a simplified fraction
+        *
+        * Called by: N/A
+        * Calls:getNum, getDem, Fraction
+        ************************************************************************/
         public Fraction negate(){
              Fraction result = new Fraction (getNum() + (-2*getNum()),Dem);
         return result;
